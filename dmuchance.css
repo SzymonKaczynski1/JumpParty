@@ -19,16 +19,16 @@ body.dark-mode {
 }
 
 nav {
-    position: absolute;
+    position: fixed; /* Fixed, aby był zawsze na górze */
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: #ffffff; /* Pełne białe tło, nie transparentne */
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 nav.scrolled {
@@ -36,7 +36,7 @@ nav.scrolled {
 }
 
 body.dark-mode nav {
-    background: rgba(26, 32, 44, 0.9);
+    background: #1a202c; /* Pełne ciemne tło w trybie ciemnym */
 }
 
 .logo {
@@ -225,7 +225,8 @@ body.dark-mode .hamburger span {
 
 .hero {
     position: relative;
-    height: 70vh;
+    margin-top: 80px; /* Miejsce na nawigację, aby zdjęcie zaczynało się poniżej */
+    height: calc(70vh - 80px); /* Wysokość pomniejszona o wysokość nawigacji */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('dm7.jpg');
     background-size: cover;
     background-position: center;
@@ -236,7 +237,6 @@ body.dark-mode .hamburger span {
     text-align: left;
     color: white;
     overflow: hidden;
-    padding-top: 80px; /* Dodaje miejsce na nawigację */
 }
 
 .hero-content {
@@ -1148,7 +1148,6 @@ body.dark-mode .modal-content {
 @media (max-width: 768px) {
     nav {
         padding: 1rem;
-        position: absolute;
     }
 
     .nav-links {
@@ -1158,7 +1157,7 @@ body.dark-mode .modal-content {
         top: 60px;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.95);
+        background: #ffffff; /* Pełne tło w mobile */
         padding: 1rem 0;
         text-align: center;
         z-index: 999;
@@ -1169,7 +1168,7 @@ body.dark-mode .modal-content {
     }
 
     body.dark-mode .nav-links {
-        background: rgba(26, 32, 44, 0.95);
+        background: #1a202c; /* Pełne tło w trybie ciemnym w mobile */
     }
 
     .nav-links a {
@@ -1185,10 +1184,10 @@ body.dark-mode .modal-content {
     }
 
     .hero {
-        height: 80vh;
+        margin-top: 60px; /* Mniejsza wysokość nawigacji w mobile */
+        height: calc(80vh - 60px);
         justify-content: center;
         text-align: center;
-        padding-top: 60px; /* Mniejsze miejsce na mniejszych ekranach */
     }
 
     .hero-content {
@@ -1285,11 +1284,5 @@ body.dark-mode .modal-content {
 
     .section {
         padding: 4rem 1rem;
-    }
-}
-
-@media (min-width: 769px) {
-    nav {
-        position: fixed; 
     }
 }
