@@ -8,7 +8,7 @@
 body {
     line-height: 1.6;
     color: #333;
-    overflow-x: hidden; /* Usuwa biały pasek po prawej */
+    overflow-x: hidden;
     transition: background-color 0.3s, color 0.3s;
     background: #f9fafc;
 }
@@ -19,16 +19,16 @@ body.dark-mode {
 }
 
 nav {
-    position: absolute; /* Zmienione z fixed na absolute dla telefonów */
+    position: absolute;
+    top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
     transition: all 0.3s ease;
-    top: 0;
 }
 
 nav.scrolled {
@@ -36,7 +36,7 @@ nav.scrolled {
 }
 
 body.dark-mode nav {
-    background: rgba(26, 32, 44, 0.95);
+    background: rgba(26, 32, 44, 0.9);
 }
 
 .logo {
@@ -224,6 +224,7 @@ body.dark-mode .hamburger span {
 }
 
 .hero {
+    position: relative;
     height: 70vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('dm7.jpg');
     background-size: cover;
@@ -234,14 +235,15 @@ body.dark-mode .hamburger span {
     justify-content: flex-start;
     text-align: left;
     color: white;
-    position: relative;
     overflow: hidden;
+    padding-top: 80px; /* Dodaje miejsce na nawigację */
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     padding-left: 4rem;
+    padding-right: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -786,7 +788,7 @@ form {
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    max-width: 500px; /* Ogranicza szerokość formularza */
+    max-width: 500px;
 }
 
 input, textarea {
@@ -812,7 +814,7 @@ input:focus, textarea:focus {
 .new-btn {
     position: relative;
     width: 100%;
-    max-width: 200px; /* Ogranicza szerokość przycisku */
+    max-width: 200px;
     padding: 1rem;
     background: linear-gradient(90deg, #1e90ff, #63b3ed);
     border: none;
@@ -823,7 +825,7 @@ input:focus, textarea:focus {
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.3s ease;
-    margin: 0 auto; /* Centruje przycisk */
+    margin: 0 auto;
 }
 
 .new-btn:hover {
@@ -1146,13 +1148,13 @@ body.dark-mode .modal-content {
 @media (max-width: 768px) {
     nav {
         padding: 1rem;
-        position: absolute; /* Menu nie będzie stałe na telefonie */
+        position: absolute;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute; /* Zmienione z fixed na absolute */
+        position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
@@ -1186,6 +1188,7 @@ body.dark-mode .modal-content {
         height: 80vh;
         justify-content: center;
         text-align: center;
+        padding-top: 60px; /* Mniejsze miejsce na mniejszych ekranach */
     }
 
     .hero-content {
@@ -1221,11 +1224,11 @@ body.dark-mode .modal-content {
     }
 
     form {
-        max-width: 100%; /* Formularz na pełną szerokość w mobile */
+        max-width: 100%;
     }
 
     .new-btn {
-        max-width: 100%; /* Przycisk na pełną szerokość w mobile */
+        max-width: 100%;
     }
 
     .about-content {
@@ -1287,6 +1290,6 @@ body.dark-mode .modal-content {
 
 @media (min-width: 769px) {
     nav {
-        position: fixed; /* Na desktopie menu wraca do fixed */
+        position: fixed; 
     }
 }

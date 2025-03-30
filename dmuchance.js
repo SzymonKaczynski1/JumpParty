@@ -131,7 +131,6 @@ dots.forEach(dot => {
     });
 });
 
-// Form submission handling
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -140,6 +139,5 @@ contactForm.addEventListener('submit', (e) => {
     alert('Dziękujemy za przesłanie formularza! Skontaktujemy się z Tobą wkrótce.');
     contactForm.reset();
 });
-
 
 showSlide(currentSlide);
