@@ -27,7 +27,6 @@ themeToggle.addEventListener('change', () => {
     body.classList.toggle('dark-mode');
 });
 
-
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -132,26 +131,15 @@ dots.forEach(dot => {
     });
 });
 
-showSlide(0);
-
+// Form submission handling
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    
-    const subject = encodeURIComponent(`Zamówienie od ${name}`);
-    const body = encodeURIComponent(`Imię i Nazwisko: ${name}\nEmail: ${email}\nWiadomość: ${message}`);
-    const mailtoLink = `mailto:JumpParty@gmail.com?subject=${subject}&body=${body}`;
-    
-    window.location.href = mailtoLink;
+    console.log('Form submitted with data:', Object.fromEntries(formData));
+    alert('Dziękujemy za przesłanie formularza! Skontaktujemy się z Tobą wkrótce.');
     contactForm.reset();
 });
 
-document.querySelector('.footer-card .see-more').addEventListener('click', () => {
-    document.querySelector('#contact').scrollIntoView({
-        behavior: 'smooth'
-    });
-});
+
+showSlide(currentSlide);
