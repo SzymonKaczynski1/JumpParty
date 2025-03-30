@@ -19,16 +19,17 @@ body.dark-mode {
 }
 
 nav {
-    position: fixed; /* Fixed, aby był zawsze na górze */
+    position: fixed;
     top: 0;
     width: 100%;
-    background: #ffffff; /* Pełne białe tło, nie transparentne */
+    background: #ffffff; /* Pełne tło, nie transparentne */
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
     transition: box-shadow 0.3s ease;
+    height: 80px; /* Stała wysokość paska nawigacyjnego */
 }
 
 nav.scrolled {
@@ -36,7 +37,7 @@ nav.scrolled {
 }
 
 body.dark-mode nav {
-    background: #1a202c; /* Pełne ciemne tło w trybie ciemnym */
+    background: #1a202c; /* Pełne tło w trybie ciemnym */
 }
 
 .logo {
@@ -225,8 +226,8 @@ body.dark-mode .hamburger span {
 
 .hero {
     position: relative;
-    margin-top: 80px; /* Miejsce na nawigację, aby zdjęcie zaczynało się poniżej */
-    height: calc(70vh - 80px); /* Wysokość pomniejszona o wysokość nawigacji */
+    margin-top: 80px; /* Stała odległość od góry, równa wysokości nawigacji */
+    height: 70vh; /* Pełna wysokość bez pomniejszania, zdjęcie zaczyna się poniżej */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('dm7.jpg');
     background-size: cover;
     background-position: center;
@@ -242,8 +243,7 @@ body.dark-mode .hamburger span {
 .hero-content {
     position: relative;
     z-index: 1;
-    padding-left: 4rem;
-    padding-right: 1rem;
+    padding: 2rem 4rem 2rem 4rem; /* Zmniejszone padding na dole, aby przyciski się zmieściły */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -263,7 +263,7 @@ body.dark-mode .hamburger span {
 .hero-content p {
     font-size: 1.5rem;
     font-weight: 400;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Zmniejszony margines, aby zrobić miejsce na przyciski */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     animation: fadeInUp 1.5s ease;
 }
@@ -1148,16 +1148,17 @@ body.dark-mode .modal-content {
 @media (max-width: 768px) {
     nav {
         padding: 1rem;
+        height: 60px; /* Mniejsza wysokość w mobile */
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Dopasowane do wysokości nawigacji w mobile */
         left: 0;
         width: 100%;
-        background: #ffffff; /* Pełne tło w mobile */
+        background: #ffffff;
         padding: 1rem 0;
         text-align: center;
         z-index: 999;
@@ -1168,7 +1169,7 @@ body.dark-mode .modal-content {
     }
 
     body.dark-mode .nav-links {
-        background: #1a202c; /* Pełne tło w trybie ciemnym w mobile */
+        background: #1a202c;
     }
 
     .nav-links a {
@@ -1184,14 +1185,14 @@ body.dark-mode .modal-content {
     }
 
     .hero {
-        margin-top: 60px; /* Mniejsza wysokość nawigacji w mobile */
-        height: calc(80vh - 60px);
+        margin-top: 60px; /* Dopasowane do wysokości nawigacji w mobile */
+        height: 80vh; /* Pełna wysokość w mobile */
         justify-content: center;
         text-align: center;
     }
 
     .hero-content {
-        padding: 0 1rem;
+        padding: 1rem; /* Zmniejszony padding w mobile */
         align-items: center;
         max-width: 100%;
     }
@@ -1202,6 +1203,7 @@ body.dark-mode .modal-content {
 
     .hero-content p {
         font-size: 1.2rem;
+        margin-bottom: 1rem; /* Jeszcze mniejszy margines w mobile */
     }
 
     .hero-buttons {
@@ -1215,6 +1217,7 @@ body.dark-mode .modal-content {
     .button {
         width: 100%;
         justify-content: center;
+        padding: 0.6rem 1rem; /* Lekko mniejsze przyciski w mobile */
     }
 
     .contact-grid {
