@@ -29,7 +29,7 @@ nav {
     align-items: center;
     z-index: 1000;
     transition: box-shadow 0.3s ease;
-    height: 80px;
+    height: 60px; /* Zmniejszono z 80px na 60px dla telefonów */
 }
 
 nav.scrolled {
@@ -226,7 +226,7 @@ body.dark-mode .hamburger span {
 
 .hero {
     position: relative;
-    margin-top: 80px;
+    margin-top: 60px; /* Zmniejszono z 80px na 60px, aby dopasować do niższego nav */
     height: 70vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('dm7.jpg');
     background-size: cover;
@@ -302,14 +302,41 @@ body.dark-mode .hamburger span {
 }
 
 @media (max-width: 768px) {
-    .mobile-only {
-        display: inline-flex;
+    nav {
+        height: 60px; /* Ustalono wysokość na 60px dla telefonów */
+        padding: 0.5rem 1rem; /* Zmniejszono padding, aby pasek był bardziej kompaktowy */
     }
+
+    .hero {
+        margin-top: 60px; /* Dopasowano do nowej wysokości nav */
+    }
+
+    .mobile-only {
+        display: inline-flex; /* Przycisk "Zadzwoń teraz" widoczny na telefonach */
+    }
+
     .hero-buttons .button {
         width: 180px;
         padding: 0.75rem;
         justify-content: center;
         box-sizing: border-box;
+    }
+
+    .hero-content {
+        padding: 1rem; /* Zmniejszono padding na telefonach, aby zmieścić więcej treści */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Zmniejszono rozmiar nagłówka na telefonach */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Zmniejszono rozmiar tekstu na telefonach */
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Przyciski jeden pod drugim na telefonach */
+        gap: 0.5rem;
     }
 }
 
@@ -411,7 +438,7 @@ body.dark-mode .about-modern {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap MEN: 4rem;
+    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -1241,7 +1268,7 @@ body.dark-mode .close {
         display: none; 
         flex-direction: column; 
         position: absolute; 
-        top: 80px; 
+        top: 60px; /* Dopasowano do nowej wysokości nav */
         left: 0; 
         width: 100%; 
         background: #ffffff; 
